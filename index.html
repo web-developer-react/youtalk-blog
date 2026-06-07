@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./css/fonts.css"> <!-- подключаем шрифты -->
+    <link rel="stylesheet" href="./css/variables.css"> <!-- подключаем переменные CSS -->
+    <link rel="stylesheet" href="./css/style.css"> <!-- подключаем общий CSS -->
+    <link rel="stylesheet" href="./css/layout.css"> <!-- подключаем CSS для layout -->
+    <link rel="stylesheet" href="./css/components/header.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
+    <link rel="stylesheet" href="./css/components/buttons.css">
+</head>
+<body class="page">
+    <header>
+        <div class="header__container container">
+            <a href="/" class="header__logo-link">
+                <img src="./assets/images/logos/header-logo.svg" alt="YouTalk Logo" class="header__logo-image">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">О нас</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">Тарифы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">Для бизнеса</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">Психологам</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">Сертификаты</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">Материалы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="" class="header__nav-link">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__button">Подобрать психолога</button>
+        </div>
+    </header>
+    <main>
+        <section class="blog">
+            <div class="blog__container container">
+                <nav class="blog__breadcrumbs" aria-label="Хлебные крошки">
+                    <a href="/" class="blog__breadcrumb-link">Главная</a>
+                    <span class="blog__breadcrumb-current">Блог</span>
+                </nav>
+                <h1 class="blog__title">Блог</h1>
+                <p class="blog__intro">Статьи о психологии, отношениях, эмоциональном здоровье и заботе о себе.</p>
+
+                <div class="blog__tags" aria-label="Темы блога">
+                    <a href="" class="blog__tag blog__tag--active">Все</a>
+                    <a href="" class="blog__tag">Самооценка</a>
+                    <a href="" class="blog__tag">Отношения</a>
+                    <a href="" class="blog__tag">Тревога</a>
+                    <a href="" class="blog__tag">Работа</a>
+                    <a href="" class="blog__tag">Психология питания</a>
+                </div>
+
+                <div class="blog__posts">
+                    <article class="blog__post">
+                        <p class="blog__post-category">Самооценка</p>
+                        <h2 class="blog__post-title">Как не утонуть в тревоге и управлять своими страхами</h2>
+                        <p class="blog__post-date">21.08.2021</p>
+                        <p class="blog__post-excerpt">Разбираем, почему тревога усиливается, как тело реагирует на стресс и какие простые практики помогают вернуть ощущение контроля.</p>
+                        <a href="./posts/post/post.html" class="blog__post-read-more">Читать статью</a>
+                    </article>
+
+                    <article class="blog__post">
+                        <p class="blog__post-category">Отношения</p>
+                        <h2 class="blog__post-title">Эмоциональное выгорание: как заметить первые признаки</h2>
+                        <p class="blog__post-date">11.08.2021</p>
+                        <p class="blog__post-excerpt">Рассказываем, чем усталость отличается от выгорания и что можно сделать, чтобы восстановить ресурс без чувства вины.</p>
+                        <a href="./posts/post/post.html" class="blog__post-read-more">Читать статью</a>
+                    </article>
+
+                    <article class="blog__post">
+                        <p class="blog__post-category">Работа</p>
+                        <h2 class="blog__post-title">Как говорить о границах спокойно и понятно</h2>
+                        <p class="blog__post-date">06.08.2021</p>
+                        <p class="blog__post-excerpt">Практичные формулировки и психологические опоры для ситуаций, где важно защитить свое время, силы и личное пространство.</p>
+                        <a href="./posts/post/post.html" class="blog__post-read-more">Читать статью</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer__container container">
+            <p class="footer__text">&copy; 2024 YouTalk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- TODO Connect JavaScript files -->
+    <script src="./js/main.js"></script> <!-- подключаем JS -->
+</body>
+</html>

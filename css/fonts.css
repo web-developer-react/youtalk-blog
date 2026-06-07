@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/fonts/Montserrat-Bold.woff2') format('woff2'); /* указываем путь к файлу шрифта и его формат */
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; /* улучшает производительность: браузер сначала показывает системный шрифт, а потом заменяет его, когда твой загрузится */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/fonts/Montserrat-Bold.woff2') format('woff2'); /* указываем путь к файлу шрифта и его формат */
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap; /* улучшает производительность: браузер сначала показывает системный шрифт, а потом заменяет его, когда твой загрузится */
+}

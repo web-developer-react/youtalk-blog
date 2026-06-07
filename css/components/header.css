@@ -1,0 +1,27 @@
+@import url("../variables.css");
+
+.header__container {
+    grid-area: header;
+
+    display: grid;
+    grid-template-columns: 51px auto 230px;
+    height: 76px;
+
+    background: var(--bg-white);
+    box-shadow: 0 -2px 0 0 var(--border-header-main) inset;
+}
+
+.header__logo-image {
+    flex-shrink: 0;
+
+    width: 51px;
+    height: 36px;
+}
+
+.header__nav {
+    margin-right: 100px;
+}
+
+.header__nav-list {}
+
+.header__nav-list .header__nav-link:nth-last-child(2) {}

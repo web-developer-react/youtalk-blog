@@ -1,0 +1,5 @@
+@import url("../variables.css");
+
+.footer__container {
+    background-color: var(--footer-bg-blue);
+}

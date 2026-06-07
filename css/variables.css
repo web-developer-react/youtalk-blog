@@ -1,0 +1,11 @@
+:root {
+    --bg-white: #FFFFFF;
+    --header-btn-bg: #E3F5F5;
+    --header-btn-color: #03B2A5;
+    --header-btn-hover-bg: #E8E5E3;
+    --header-btn-active-bg: #DBD5D5E6;
+    --header-btn-active-color: #00A7A0;
+    --header-btn-focus-shadow: #00A7A0;
+    --border-header-main: #EFF2F2;
+    --footer-bg-blue: #2963A3;
+}
