@@ -1,15 +1,51 @@
+/* Шрифты проекта. БЭМ здесь не нужен. */
+@layer fonts {
+/* TODO: Обновление путей src при переносе шрифтов. */
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/assets/fonts/Montserrat-Bold.woff2') format('woff2'); /* указываем путь к файлу шрифта и его формат */
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap; /* улучшает производительность: браузер сначала показывает системный шрифт, а потом заменяет его, когда твой загрузится */
+  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/Montserrat-Regular.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 400; /* Задаёт толщину текста. */
+  font-style: normal; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/assets/fonts/Montserrat-Bold.woff2') format('woff2'); /* указываем путь к файлу шрифта и его формат */
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap; /* улучшает производительность: браузер сначала показывает системный шрифт, а потом заменяет его, когда твой загрузится */
+  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/Montserrat-Italic.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 400; /* Задаёт толщину текста. */
+  font-style: italic; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
+}
+
+@font-face {
+  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/Montserrat-Medium.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 500; /* Задаёт толщину текста. */
+  font-style: normal; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
+}
+
+@font-face {
+  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 600; /* Задаёт толщину текста. */
+  font-style: normal; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
+}
+
+@font-face {
+  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 700; /* Задаёт толщину текста. */
+  font-style: normal; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
+}
+
+@font-face {
+  font-family: "Open Sans"; /* Задаёт семейство шрифта. */
+  src: url("../assets/fonts/OpenSans-Regular.woff2") format("woff2"); /* Указывает файл шрифта. */
+  font-weight: 400; /* Задаёт толщину текста. */
+  font-style: normal; /* Задаёт начертание текста. */
+  font-display: swap; /* Показывает текст при загрузке. */
+}
 }

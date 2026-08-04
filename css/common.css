@@ -1,0 +1,826 @@
+/* Общие БЭМ-компоненты для всех страниц. */
+/* TODO: Проверка общих изменений на обеих страницах. */
+@layer fonts, common, pages, enhancements;
+
+@layer common {
+/* TODO: Основные цвета и размеры находятся здесь. */
+:root {
+  --color-text: #333333; /* Основной цвет текста. */
+  --color-text-secondary: #494949; /* Дополнительный цвет текста. */
+  --color-muted: #868686; /* Цвет спокойного текста. */
+  --color-border: #dedede; /* Основной цвет границы. */
+  --color-border-strong: #c1c5cd; /* Более заметная граница. */
+  --color-accent: #16c8bb; /* Основной акцентный цвет. */
+  --color-accent-dark: #03b2a5; /* Тёмный акцентный цвет. */
+  --color-accent-pale: #e3f5f5; /* Светлый акцентный фон. */
+  --color-footer: #2963a3; /* Цвет фона подвала. */
+  --container: 1200px; /* Максимальная ширина страницы. */
+  --radius-card: 16px; /* Скругление карточек. */
+  --shadow-focus: 0 0 0 3px rgba(22, 200, 187, 0.35); /* Рамка клавиатурного фокуса. */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Учитывает отступы в размере. */
+}
+
+html {
+  scroll-behavior: smooth; /* Настраивает плавную прокрутку. */
+  scrollbar-width: none; /* Настраивает ширину полосы прокрутки. */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Задаёт способ отображения. */
+}
+
+body {
+  min-width: 320px; /* Задаёт минимальную ширину. */
+  margin: 0; /* Задаёт внешний отступ. */
+  color: var(--color-text); /* Задаёт цвет текста. */
+  background: #ffffff; /* Задаёт фон. */
+  font-family: "Montserrat", Arial, sans-serif; /* Задаёт семейство шрифта. */
+  -webkit-font-smoothing: antialiased; /* Сглаживает текст в Safari. */
+}
+
+img {
+  display: block; /* Задаёт способ отображения. */
+  max-width: 100%; /* Задаёт максимальную ширину. */
+  height: auto; /* Задаёт высоту. */
+}
+
+a {
+  color: inherit; /* Задаёт цвет текста. */
+  text-decoration: none; /* Оформляет текст ссылки. */
+}
+
+button,
+input {
+  font: inherit; /* Наследует настройки шрифта. */
+}
+
+button {
+  color: inherit; /* Задаёт цвет текста. */
+}
+
+[hidden] {
+  display: none !important; /* Задаёт способ отображения. */
+}
+
+/* TODO: Сохранение видимого фокуса для клавиатуры. */
+:focus-visible {
+  outline: none; /* Задаёт внешнюю рамку. */
+  box-shadow: var(--shadow-focus); /* Добавляет тень. */
+}
+
+/* БЭМ: блок «container» — отдельный компонент. */
+.container {
+  width: min(calc(100% - 48px), var(--container)); /* Задаёт ширину. */
+  margin-inline: auto; /* Задаёт боковые отступы. */
+}
+
+/* БЭМ: блок «skip-link» — отдельный компонент. */
+.skip-link {
+  position: fixed; /* Задаёт способ позиционирования. */
+  z-index: 100; /* Задаёт порядок слоёв. */
+  top: 8px; /* Задаёт положение сверху. */
+  left: 8px; /* Задаёт положение слева. */
+  padding: 10px 14px; /* Задаёт внутренний отступ. */
+  border-radius: 4px; /* Скругляет углы. */
+  color: #ffffff; /* Задаёт цвет текста. */
+  background: var(--color-footer); /* Задаёт фон. */
+  transform: translateY(-150%); /* Перемещает или поворачивает элемент. */
+  transition: transform 0.2s ease; /* Задаёт плавное изменение. */
+}
+
+/* БЭМ: блок «skip-link» — отдельный компонент. */
+.skip-link:focus {
+  transform: translateY(0); /* Перемещает или поворачивает элемент. */
+}
+
+/* БЭМ: блок «visually-hidden» — отдельный компонент. */
+.visually-hidden {
+  position: absolute; /* Задаёт способ позиционирования. */
+  width: 1px; /* Задаёт ширину. */
+  height: 1px; /* Задаёт высоту. */
+  padding: 0; /* Задаёт внутренний отступ. */
+  margin: -1px; /* Задаёт внешний отступ. */
+  overflow: hidden; /* Управляет лишним содержимым. */
+  clip: rect(0, 0, 0, 0); /* Скрывает лишнюю область. */
+  white-space: nowrap; /* Управляет переносом текста. */
+  border: 0; /* Задаёт границу. */
+}
+
+/* БЭМ: блок «button» — отдельный компонент. */
+.button {
+  display: inline-flex; /* Задаёт способ отображения. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+  justify-content: center; /* Выравнивает элементы вдоль. */
+  min-height: 48px; /* Задаёт минимальную высоту. */
+  padding: 12px 20px; /* Задаёт внутренний отступ. */
+  border: 0; /* Задаёт границу. */
+  border-radius: 4px; /* Скругляет углы. */
+  font-size: 16px; /* Задаёт размер текста. */
+  font-weight: 700; /* Задаёт толщину текста. */
+  line-height: 24px; /* Задаёт высоту строки. */
+  cursor: pointer; /* Задаёт вид курсора. */
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; /* Задаёт плавное изменение. */
+}
+
+/* БЭМ: блок «button» — отдельный компонент. */
+.button:hover {
+  transform: translateY(-1px); /* Перемещает или поворачивает элемент. */
+}
+
+/* БЭМ: модификатор «pale» меняет «button». */
+.button--pale {
+  color: var(--color-accent-dark); /* Задаёт цвет текста. */
+  background: var(--color-accent-pale); /* Задаёт фон. */
+}
+
+/* БЭМ: модификатор «pale» меняет «button». */
+.button--pale:hover {
+  background: #d4eeee; /* Задаёт фон. */
+}
+
+/* БЭМ: модификатор «primary» меняет «button». */
+.button--primary {
+  color: #ffffff; /* Задаёт цвет текста. */
+  background: #35b3a9; /* Задаёт фон. */
+}
+
+/* БЭМ: модификатор «primary» меняет «button». */
+.button--primary:hover {
+  background: #269f96; /* Задаёт фон. */
+}
+
+/* БЭМ: блок «header» — отдельный компонент. */
+.header {
+  height: 76px; /* Задаёт высоту. */
+  border-bottom: 2px solid #eff2f2; /* Задаёт границу снизу. */
+  background: #ffffff; /* Задаёт фон. */
+}
+
+/* БЭМ: элемент «inner» блока «header». */
+.header__inner {
+  display: flex; /* Задаёт способ отображения. */
+  height: 74px; /* Задаёт высоту. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+}
+
+/* БЭМ: элемент «logo» блока «header». */
+.header__logo {
+  width: 51px; /* Задаёт ширину. */
+  flex: 0 0 51px; /* Настраивает размер во Flexbox. */
+}
+
+/* БЭМ: элемент «nav» блока «header». */
+.header__nav {
+  display: flex; /* Задаёт способ отображения. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+  gap: 30px; /* Задаёт расстояние между элементами. */
+  margin-left: 51px; /* Задаёт отступ слева. */
+}
+
+/* БЭМ: элемент «link» блока «header». */
+.header__link {
+  padding-block: 10px; /* Задаёт вертикальные отступы. */
+  font-size: 14px; /* Задаёт размер текста. */
+  font-weight: 500; /* Задаёт толщину текста. */
+  line-height: 16px; /* Задаёт высоту строки. */
+  letter-spacing: 0.25px; /* Задаёт расстояние между буквами. */
+  white-space: nowrap; /* Управляет переносом текста. */
+  transition: color 0.2s ease; /* Задаёт плавное изменение. */
+}
+
+/* БЭМ: элемент «link» блока «header». */
+.header__link:hover,
+.header__link:focus-visible {
+  color: var(--color-accent-dark); /* Задаёт цвет текста. */
+}
+
+/* БЭМ: модификатор «dropdown» меняет «header__link». */
+.header__link--dropdown {
+  display: flex; /* Задаёт способ отображения. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+  gap: 8px; /* Задаёт расстояние между элементами. */
+}
+
+/* БЭМ: модификатор «dropdown» меняет «header__link». */
+.header__link--dropdown::after {
+  width: 7px; /* Задаёт ширину. */
+  height: 7px; /* Задаёт высоту. */
+  border-right: 1.5px solid currentColor; /* Задаёт границу справа. */
+  border-bottom: 1.5px solid currentColor; /* Задаёт границу снизу. */
+  content: ""; /* Добавляет декоративное содержимое. */
+  transform: translateY(-2px) rotate(45deg); /* Перемещает или поворачивает элемент. */
+}
+
+/* БЭМ: элемент «cta» блока «header». */
+.header__cta {
+  margin-left: auto; /* Задаёт отступ слева. */
+}
+
+/* БЭМ: элемент «menu-button» блока «header». */
+.header__menu-button {
+  display: none; /* Задаёт способ отображения. */
+  width: 40px; /* Задаёт ширину. */
+  height: 40px; /* Задаёт высоту. */
+  padding: 10px; /* Задаёт внутренний отступ. */
+  border: 0; /* Задаёт границу. */
+  background: transparent; /* Задаёт фон. */
+  cursor: pointer; /* Задаёт вид курсора. */
+}
+
+/* БЭМ: элемент «menu-button» блока «header». */
+.header__menu-button span {
+  display: block; /* Задаёт способ отображения. */
+  width: 18px; /* Задаёт ширину. */
+  height: 2px; /* Задаёт высоту. */
+  margin: 3px auto; /* Задаёт внешний отступ. */
+  border-radius: 1px; /* Скругляет углы. */
+  background: var(--color-accent-dark); /* Задаёт фон. */
+}
+
+/* БЭМ: блок «breadcrumbs» — отдельный компонент. */
+.breadcrumbs {
+  display: flex; /* Задаёт способ отображения. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+  gap: 4px; /* Задаёт расстояние между элементами. */
+  padding-top: 16px; /* Задаёт отступ внутри сверху. */
+  margin-left: 6px; /* Задаёт отступ слева. */
+  color: rgba(51, 51, 51, 0.7); /* Задаёт цвет текста. */
+  font-size: 12px; /* Задаёт размер текста. */
+  line-height: 18px; /* Задаёт высоту строки. */
+  letter-spacing: 0.25px; /* Задаёт расстояние между буквами. */
+}
+
+/* БЭМ: элемент «link» блока «breadcrumbs». */
+.breadcrumbs__link:hover {
+  color: var(--color-accent-dark); /* Задаёт цвет текста. */
+  text-decoration: underline; /* Оформляет текст ссылки. */
+}
+
+/* БЭМ: элемент «arrow» блока «breadcrumbs». */
+.breadcrumbs__arrow {
+  display: inline-grid; /* Задаёт способ отображения. */
+  width: 16px; /* Задаёт ширину. */
+  height: 16px; /* Задаёт высоту. */
+  flex: 0 0 16px; /* Настраивает размер во Flexbox. */
+  font-size: 12px; /* Задаёт размер текста. */
+  line-height: 1; /* Задаёт высоту строки. */
+  place-items: center; /* Выравнивает элементы Grid. */
+}
+
+/* БЭМ: блок «footer» — отдельный компонент. */
+.footer {
+  min-height: 302px; /* Задаёт минимальную высоту. */
+  color: #ffffff; /* Задаёт цвет текста. */
+  background: var(--color-footer); /* Задаёт фон. */
+}
+
+/* БЭМ: элемент «inner» блока «footer». */
+.footer__inner {
+  display: grid; /* Задаёт способ отображения. */
+  grid-template-columns: minmax(0, 310px) minmax(0, 1fr) 221px; /* Задаёт колонки Grid. */
+  gap: 0 66px; /* Задаёт расстояние между элементами. */
+  padding-top: 40px; /* Задаёт отступ внутри сверху. */
+}
+
+/* БЭМ: элемент «navigation» блока «footer». */
+.footer__navigation {
+  display: grid; /* Задаёт способ отображения. */
+  grid-template-columns: repeat(2, max-content); /* Задаёт колонки Grid. */
+  gap: 93px; /* Задаёт расстояние между элементами. */
+}
+
+/* БЭМ: элемент «links» блока «footer». */
+.footer__links {
+  display: flex; /* Задаёт способ отображения. */
+  flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+  gap: 16px; /* Задаёт расстояние между элементами. */
+}
+
+/* БЭМ: элемент «links» блока «footer». */
+.footer__links a {
+  font-size: 16px; /* Задаёт размер текста. */
+  font-weight: 700; /* Задаёт толщину текста. */
+  line-height: 24px; /* Задаёт высоту строки. */
+}
+
+/* БЭМ: блок «footer» — отдельный компонент. */
+.footer a:hover {
+  text-decoration: underline; /* Оформляет текст ссылки. */
+}
+
+/* БЭМ: блок «subscribe» — отдельный компонент. */
+.subscribe {
+  width: 486px; /* Задаёт ширину. */
+}
+
+/* БЭМ: элемент «title» блока «subscribe». */
+.subscribe__title {
+  margin: 0 0 8px; /* Задаёт внешний отступ. */
+  font-size: 18px; /* Задаёт размер текста. */
+  line-height: 26px; /* Задаёт высоту строки. */
+}
+
+/* БЭМ: элемент «form» блока «subscribe». */
+.subscribe__form {
+  position: relative; /* Задаёт способ позиционирования. */
+  width: 384px; /* Задаёт ширину. */
+}
+
+/* БЭМ: элемент «input» блока «subscribe». */
+.subscribe__input {
+  width: 100%; /* Задаёт ширину. */
+  height: 48px; /* Задаёт высоту. */
+  padding: 13px 64px 13px 15px; /* Задаёт внутренний отступ. */
+  border: 1px solid rgba(157, 157, 157, 0.2); /* Задаёт границу. */
+  border-radius: 4px; /* Скругляет углы. */
+  color: var(--color-text); /* Задаёт цвет текста. */
+  background: #ffffff; /* Задаёт фон. */
+  font-size: 14px; /* Задаёт размер текста. */
+  line-height: 20px; /* Задаёт высоту строки. */
+}
+
+/* БЭМ: элемент «input» блока «subscribe». */
+.subscribe__input::placeholder {
+  color: #9d9d9d; /* Задаёт цвет текста. */
+}
+
+/* БЭМ: элемент «input» блока «subscribe». */
+.subscribe__input[aria-invalid="true"] {
+  border-color: #ffb8a8; /* Меняет цвет границы. */
+}
+
+/* БЭМ: элемент «button» блока «subscribe». */
+.subscribe__button {
+  position: absolute; /* Задаёт способ позиционирования. */
+  top: 0; /* Задаёт положение сверху. */
+  right: 0; /* Задаёт положение справа. */
+  display: grid; /* Задаёт способ отображения. */
+  width: 65px; /* Задаёт ширину. */
+  height: 48px; /* Задаёт высоту. */
+  padding: 0; /* Задаёт внутренний отступ. */
+  border: 0; /* Задаёт границу. */
+  border-radius: 4px; /* Скругляет углы. */
+  background: var(--color-accent); /* Задаёт фон. */
+  place-items: center; /* Выравнивает элементы Grid. */
+  cursor: pointer; /* Задаёт вид курсора. */
+}
+
+/* БЭМ: элемент «button» блока «subscribe». */
+.subscribe__button:hover {
+  background: var(--color-accent-dark); /* Задаёт фон. */
+}
+
+/* БЭМ: элемент «error» блока «subscribe». */
+.subscribe__error {
+  min-height: 0; /* Задаёт минимальную высоту. */
+  margin: 4px 0 0; /* Задаёт внешний отступ. */
+  color: #ffe2dc; /* Задаёт цвет текста. */
+  font-size: 12px; /* Задаёт размер текста. */
+}
+
+/* БЭМ: элемент «error» блока «subscribe». */
+.subscribe__error:empty {
+  display: none; /* Задаёт способ отображения. */
+}
+
+/* БЭМ: элемент «note» блока «subscribe». */
+.subscribe__note {
+  width: 486px; /* Задаёт ширину. */
+  margin: 8px 0 0; /* Задаёт внешний отступ. */
+  opacity: 0.7; /* Задаёт прозрачность. */
+  font-size: 12px; /* Задаёт размер текста. */
+  line-height: 18px; /* Задаёт высоту строки. */
+  letter-spacing: 0.25px; /* Задаёт расстояние между буквами. */
+}
+
+/* БЭМ: элемент «member» блока «social». */
+.social__member {
+  display: flex; /* Задаёт способ отображения. */
+  height: 50px; /* Задаёт высоту. */
+  align-items: center; /* Выравнивает элементы поперёк. */
+}
+
+/* БЭМ: элемент «member» блока «social». */
+.social__member img:first-child {
+  width: 100px; /* Задаёт ширину. */
+  height: 50px; /* Задаёт высоту. */
+}
+
+/* БЭМ: элемент «member» блока «social». */
+.social__member img:last-child {
+  width: 113px; /* Задаёт ширину. */
+  margin-left: 8px; /* Задаёт отступ слева. */
+}
+
+/* БЭМ: элемент «links» блока «social». */
+.social__links {
+  display: flex; /* Задаёт способ отображения. */
+  gap: 16px; /* Задаёт расстояние между элементами. */
+  margin-top: 40px; /* Задаёт отступ сверху. */
+}
+
+/* БЭМ: элемент «links» блока «social». */
+.social__links a {
+  position: relative; /* Задаёт способ позиционирования. */
+  display: grid; /* Задаёт способ отображения. */
+  width: 32px; /* Задаёт ширину. */
+  height: 32px; /* Задаёт высоту. */
+  border-radius: 50%; /* Скругляет углы. */
+  background: #eff5fb; /* Задаёт фон. */
+  place-items: center; /* Выравнивает элементы Grid. */
+}
+
+/* БЭМ: элемент «links» блока «social». */
+.social__links a::before {
+  position: absolute; /* Задаёт способ позиционирования. */
+  inset: -6px; /* Задаёт положение со всех сторон. */
+  border-radius: 50%; /* Скругляет углы. */
+  content: ""; /* Добавляет декоративное содержимое. */
+}
+
+/* БЭМ: элемент «links» блока «social». */
+.social__links a:hover {
+  opacity: 0.8; /* Задаёт прозрачность. */
+}
+
+/* БЭМ: элемент «links» блока «social». */
+.social__links a:focus-visible {
+  outline: 2px solid #fff; /* Задаёт внешнюю рамку. */
+  outline-offset: 4px; /* Отодвигает внешнюю рамку. */
+}
+
+/* БЭМ: модификатор «dzen» меняет «social__link». */
+.social__link--dzen {
+  background: transparent; /* Задаёт фон. */
+}
+
+/* БЭМ: элемент «icon» блока «social». */
+.social__icon {
+  display: block; /* Задаёт способ отображения. */
+}
+
+/* БЭМ: модификатор «vk» меняет «social__icon». */
+.social__icon--vk {
+  width: 20px; /* Задаёт ширину. */
+  height: 12px; /* Задаёт высоту. */
+}
+
+/* БЭМ: модификатор «telegram» меняет «social__icon». */
+.social__icon--telegram {
+  width: 16px; /* Задаёт ширину. */
+  height: 14px; /* Задаёт высоту. */
+}
+
+/* БЭМ: модификатор «twitter» меняет «social__icon». */
+.social__icon--twitter {
+  width: 18px; /* Задаёт ширину. */
+  height: 18px; /* Задаёт высоту. */
+}
+
+/* БЭМ: модификатор «dzen» меняет «social__icon». */
+.social__icon--dzen {
+  width: 32px; /* Задаёт ширину. */
+  height: 32px; /* Задаёт высоту. */
+}
+
+/* БЭМ: элемент «legal» блока «footer». */
+.footer__legal {
+  display: flex; /* Задаёт способ отображения. */
+  grid-column: 1 / -1; /* Задаёт место элемента в Grid. */
+  gap: 48px; /* Задаёт расстояние между элементами. */
+  padding-top: 16px; /* Задаёт отступ внутри сверху. */
+  margin-top: 24px; /* Задаёт отступ сверху. */
+  border-top: 1px solid rgba(157, 157, 157, 0.3); /* Задаёт границу сверху. */
+  opacity: 0.7; /* Задаёт прозрачность. */
+  font-size: 14px; /* Задаёт размер текста. */
+  line-height: 20px; /* Задаёт высоту строки. */
+}
+
+/* TODO: Проверка всех экранов после изменения ширины. */
+@media (max-width: 1199px) {
+  /* БЭМ: блок «container» — отдельный компонент. */
+  .container {
+    width: calc(100% - 40px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav,
+  .header__cta {
+    display: none; /* Задаёт способ отображения. */
+  }
+
+  /* БЭМ: элемент «menu-button» блока «header». */
+  .header__menu-button {
+    display: block; /* Задаёт способ отображения. */
+    margin-left: auto; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav.is-open {
+    position: absolute; /* Задаёт способ позиционирования. */
+    z-index: 20; /* Задаёт порядок слоёв. */
+    top: 74px; /* Задаёт положение сверху. */
+    right: 20px; /* Задаёт положение справа. */
+    display: flex; /* Задаёт способ отображения. */
+    width: min(300px, calc(100% - 40px)); /* Задаёт ширину. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    align-items: stretch; /* Выравнивает элементы поперёк. */
+    gap: 0; /* Задаёт расстояние между элементами. */
+    padding: 12px 20px; /* Задаёт внутренний отступ. */
+    border: 1px solid var(--color-border); /* Задаёт границу. */
+    border-radius: 8px; /* Скругляет углы. */
+    margin: 0; /* Задаёт внешний отступ. */
+    background: #ffffff; /* Задаёт фон. */
+    box-shadow: 0 10px 30px rgba(51, 51, 51, 0.15); /* Добавляет тень. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav.is-open .header__link {
+    padding: 10px 0; /* Задаёт внутренний отступ. */
+  }
+
+  /* БЭМ: блок «footer» — отдельный компонент. */
+  .footer {
+    min-height: 454px; /* Задаёт минимальную высоту. */
+  }
+
+  /* БЭМ: элемент «inner» блока «footer». */
+  .footer__inner {
+    grid-template-columns: minmax(0, 248px) minmax(0, 1fr); /* Задаёт колонки Grid. */
+    gap: 24px 56px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: элемент «navigation» блока «footer». */
+  .footer__navigation {
+    gap: 48px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «subscribe» — отдельный компонент. */
+  .subscribe {
+    width: min(450px, 100%); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: элемент «note» блока «subscribe». */
+  .subscribe__note {
+    width: 100%; /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «social» — отдельный компонент. */
+  .social {
+    grid-column: 1 / -1; /* Задаёт место элемента в Grid. */
+  }
+
+  /* БЭМ: элемент «links» блока «social». */
+  .social__links {
+    margin-top: 16px; /* Задаёт отступ сверху. */
+  }
+
+  /* БЭМ: элемент «legal» блока «footer». */
+  .footer__legal {
+    margin-top: 0; /* Задаёт отступ сверху. */
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  /* БЭМ: блок «container» — отдельный компонент. */
+  .container {
+    width: calc(100% - 64px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav {
+    display: flex; /* Задаёт способ отображения. */
+    gap: 16px; /* Задаёт расстояние между элементами. */
+    margin-left: 32px; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: элемент «cta» блока «header». */
+  .header__cta {
+    display: inline-flex; /* Задаёт способ отображения. */
+  }
+
+  /* БЭМ: элемент «menu-button» блока «header». */
+  .header__menu-button {
+    display: none; /* Задаёт способ отображения. */
+  }
+
+  /* БЭМ: блок «footer» — отдельный компонент. */
+  .footer {
+    min-height: 302px; /* Задаёт минимальную высоту. */
+  }
+
+  /* БЭМ: элемент «inner» блока «footer». */
+  .footer__inner {
+    grid-template-columns: minmax(0, 250px) minmax(0, 450px) 221px; /* Задаёт колонки Grid. */
+    gap: 0 19px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: элемент «navigation» блока «footer». */
+  .footer__navigation {
+    gap: 30px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «subscribe» — отдельный компонент. */
+  .subscribe {
+    width: 450px; /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «social» — отдельный компонент. */
+  .social {
+    grid-column: auto; /* Задаёт место элемента в Grid. */
+  }
+
+  /* БЭМ: элемент «links» блока «social». */
+  .social__links {
+    margin-top: 40px; /* Задаёт отступ сверху. */
+  }
+
+  /* БЭМ: элемент «legal» блока «footer». */
+  .footer__legal {
+    margin-top: 24px; /* Задаёт отступ сверху. */
+  }
+}
+
+@media (max-width: 600px) {
+  /* БЭМ: блок «container» — отдельный компонент. */
+  .container {
+    width: calc(100% - 40px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «header» — отдельный компонент. */
+  .header {
+    height: 72px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «inner» блока «header». */
+  .header__inner {
+    height: 70px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «logo» блока «header». */
+  .header__logo,
+  .header__logo img {
+    width: 51px; /* Задаёт ширину. */
+    height: 36px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav.is-open {
+    top: 70px; /* Задаёт положение сверху. */
+    right: 20px; /* Задаёт положение справа. */
+    width: calc(100% - 40px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «breadcrumbs» — отдельный компонент. */
+  .breadcrumbs {
+    padding-top: 16px; /* Задаёт отступ внутри сверху. */
+    margin-left: 0; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: блок «footer» — отдельный компонент. */
+  .footer {
+    min-height: 746px; /* Задаёт минимальную высоту. */
+  }
+
+  /* БЭМ: элемент «inner» блока «footer». */
+  .footer__inner {
+    display: grid; /* Задаёт способ отображения. */
+    grid-template-columns: 1fr; /* Задаёт колонки Grid. */
+    gap: 20px; /* Задаёт расстояние между элементами. */
+    padding-top: 35px; /* Задаёт отступ внутри сверху. */
+    padding-bottom: 35px; /* Задаёт отступ внутри снизу. */
+  }
+
+  /* БЭМ: элемент «navigation» блока «footer». */
+  .footer__navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Задаёт колонки Grid. */
+    gap: 16px 28px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: элемент «links» блока «footer». */
+  .footer__links {
+    gap: 16px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «subscribe» — отдельный компонент. */
+  .subscribe,
+  .subscribe__form,
+  .subscribe__note {
+    width: 100%; /* Задаёт ширину. */
+  }
+
+  /* БЭМ: элемент «title» блока «subscribe». */
+  .subscribe__title {
+    font-size: 18px; /* Задаёт размер текста. */
+    line-height: 26px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: элемент «desktop-break» блока «subscribe». */
+  .subscribe__desktop-break {
+    display: none; /* Задаёт способ отображения. */
+  }
+
+  /* БЭМ: блок «social» — отдельный компонент. */
+  .social {
+    grid-column: 1; /* Задаёт место элемента в Grid. */
+  }
+
+  /* БЭМ: элемент «links» блока «social». */
+  .social__links {
+    margin-top: 20px; /* Задаёт отступ сверху. */
+  }
+
+  /* БЭМ: элемент «legal» блока «footer». */
+  .footer__legal {
+    display: flex; /* Задаёт способ отображения. */
+    grid-column: 1; /* Задаёт место элемента в Grid. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 20px; /* Задаёт расстояние между элементами. */
+    padding-top: 16px; /* Задаёт отступ внутри сверху. */
+    margin-top: 0; /* Задаёт отступ сверху. */
+  }
+}
+
+@media (max-width: 359px) {
+  /* БЭМ: блок «container» — отдельный компонент. */
+  .container {
+    width: calc(100% - 32px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «header» — отдельный компонент. */
+  .header {
+    height: 56px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «inner» блока «header». */
+  .header__inner {
+    height: 54px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «logo» блока «header». */
+  .header__logo,
+  .header__logo img {
+    width: 48px; /* Задаёт ширину. */
+    height: 34px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: элемент «nav» блока «header». */
+  .header__nav.is-open {
+    top: 54px; /* Задаёт положение сверху. */
+    right: 16px; /* Задаёт положение справа. */
+    width: calc(100% - 32px); /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «breadcrumbs» — отдельный компонент. */
+  .breadcrumbs {
+    padding-top: 24px; /* Задаёт отступ внутри сверху. */
+  }
+
+  /* БЭМ: элемент «navigation» блока «footer». */
+  .footer__navigation {
+    gap: 12px 20px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: элемент «inner» блока «footer». */
+  .footer__inner {
+    gap: 19px; /* Задаёт расстояние между элементами. */
+  }
+}
+
+/* TODO: Сохранение защиты от лишней анимации. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; /* Настраивает плавную прокрутку. */
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important; /* Настраивает плавную прокрутку. */
+    transition-duration: 0.01ms !important; /* Задаёт длительность изменения. */
+  }
+}
+
+/* TODO: Поддержка системных цветов. */
+@media (forced-colors: active) {
+  /* БЭМ: блок «button» — отдельный компонент. */
+  .button {
+    border: 1px solid ButtonText; /* Задаёт границу. */
+  }
+}
+}
+
+@layer enhancements {
+/* TODO: Работа основных стилей без этой функции. */
+  @supports (text-wrap: balance) {
+    /* БЭМ: элемент «title» блока «subscribe». */
+    .subscribe__title {
+      text-wrap: balance; /* Улучшает перенос строк. */
+    }
+  }
+}

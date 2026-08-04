@@ -1,0 +1,772 @@
+/* БЭМ-компоненты страницы статьи. */
+/* TODO: Подключение данного файла только к странице статьи. */
+@layer pages {
+  /* БЭМ: блок «article-page» — отдельный компонент. */
+  .article-page {
+    position: relative; /* Задаёт способ позиционирования. */
+    overflow: hidden; /* Управляет лишним содержимым. */
+    color: var(--color-text); /* Задаёт цвет текста. */
+    background: #fff; /* Задаёт фон. */
+  }
+
+  /* БЭМ: элемент «breadcrumbs» блока «article-page». */
+  .article-page__breadcrumbs {
+    max-width: 100%; /* Задаёт максимальную ширину. */
+    overflow: hidden; /* Управляет лишним содержимым. */
+    white-space: nowrap; /* Управляет переносом текста. */
+  }
+
+  /* БЭМ: элемент «breadcrumbs» блока «article-page». */
+  .article-page__breadcrumbs .breadcrumbs__current {
+    overflow: hidden; /* Управляет лишним содержимым. */
+    text-overflow: ellipsis; /* Показывает обрезанный текст. */
+  }
+
+  /* БЭМ: блок «article-layout» — отдельный компонент. */
+  .article-layout {
+    display: grid; /* Задаёт способ отображения. */
+    grid-template: auto / minmax(0, 690px) 282px; /* Задаёт структуру Grid. */
+    justify-content: space-between; /* Выравнивает элементы вдоль. */
+    place-items: start stretch; /* Выравнивает элементы Grid. */
+    padding-top: 54px; /* Задаёт отступ внутри сверху. */
+  }
+
+  /* БЭМ: блок «article» — отдельный компонент. */
+  .article {
+    display: flex; /* Задаёт способ отображения. */
+    min-width: 0; /* Задаёт минимальную ширину. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 24px; /* Задаёт расстояние между элементами. */
+    font-size: 16px; /* Задаёт размер текста. */
+    font-weight: 500; /* Задаёт толщину текста. */
+    line-height: 24px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «article» — отдельный компонент. */
+  .article p,
+  .article figure,
+  .article blockquote,
+  .article ul,
+  .article h1,
+  .article h2,
+  .article h3 {
+    margin: 0; /* Задаёт внешний отступ. */
+  }
+
+  /* БЭМ: элемент «header» блока «article». */
+  .article__header {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+  }
+
+  /* БЭМ: элемент «title» блока «article». */
+  .article__title {
+    max-width: 690px; /* Задаёт максимальную ширину. */
+    margin: 0 0 16px; /* Задаёт внешний отступ. */
+    font-size: 48px; /* Задаёт размер текста. */
+    line-height: 56px; /* Задаёт высоту строки. */
+    letter-spacing: -0.35px; /* Задаёт расстояние между буквами. */
+  }
+
+  /* БЭМ: элемент «meta» блока «article». */
+  .article__meta {
+    display: flex; /* Задаёт способ отображения. */
+    gap: 8px; /* Задаёт расстояние между элементами. */
+    margin-bottom: 24px; /* Задаёт отступ снизу. */
+    color: var(--color-text-secondary); /* Задаёт цвет текста. */
+    font-size: 14px; /* Задаёт размер текста. */
+    font-weight: 400; /* Задаёт толщину текста. */
+    line-height: 20px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: элемент «hero» блока «article». */
+  .article__hero,
+  .article-figure img {
+    width: 100%; /* Задаёт ширину. */
+    object-fit: cover; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: элемент «hero» блока «article». */
+  .article__hero {
+    height: 331px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: блок «article-toc» — отдельный компонент. */
+  .article-toc {
+    max-width: 588px; /* Задаёт максимальную ширину. */
+  }
+
+  /* БЭМ: элемент «title» блока «article-toc». */
+  .article-toc__title {
+    margin-bottom: 16px; /* Задаёт отступ снизу. */
+    font-size: 16px; /* Задаёт размер текста. */
+    line-height: 24px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: элемент «list» блока «article-toc». */
+  .article-toc__list,
+  .article-list {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 8px; /* Задаёт расстояние между элементами. */
+    padding: 0; /* Задаёт внутренний отступ. */
+    list-style: none; /* Оформляет маркеры списка. */
+  }
+
+  /* БЭМ: элемент «list» блока «article-toc». */
+  .article-toc__list li,
+  .article-list li {
+    position: relative; /* Задаёт способ позиционирования. */
+    padding-left: 32px; /* Задаёт отступ внутри слева. */
+  }
+
+  /* БЭМ: элемент «list» блока «article-toc». */
+  .article-toc__list li::before,
+  .article-list li::before {
+    position: absolute; /* Задаёт способ позиционирования. */
+    top: 8px; /* Задаёт положение сверху. */
+    left: 8px; /* Задаёт положение слева. */
+    width: 8px; /* Задаёт ширину. */
+    height: 8px; /* Задаёт высоту. */
+    border-radius: 50%; /* Скругляет углы. */
+    background: #03b2a5; /* Задаёт фон. */
+    content: ""; /* Добавляет декоративное содержимое. */
+  }
+
+  /* БЭМ: элемент «list» блока «article-toc». */
+  .article-toc__list a {
+    text-decoration: underline; /* Оформляет текст ссылки. */
+    text-underline-offset: 2px; /* Сдвигает линию подчёркивания. */
+  }
+
+  /* БЭМ: элемент «nested» блока «article-toc». */
+  .article-toc__nested {
+    margin-left: 16px; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: модификатор «2» меняет «article-toc__nested». */
+  .article-toc__nested--2 {
+    margin-left: 32px; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: модификатор «3» меняет «article-toc__nested». */
+  .article-toc__nested--3 {
+    margin-left: 48px; /* Задаёт отступ слева. */
+  }
+
+  /* БЭМ: элемент «section» блока «article». */
+  .article__section {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 16px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: элемент «section» блока «article». */
+  .article__section h2,
+  .exercise h2 {
+    font-size: 24px; /* Задаёт размер текста. */
+    line-height: 32px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «article-quote» — отдельный компонент. */
+  .article-quote {
+    position: relative; /* Задаёт способ позиционирования. */
+    display: flex; /* Задаёт способ отображения. */
+    min-height: 162px; /* Задаёт минимальную высоту. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 8px; /* Задаёт расстояние между элементами. */
+    justify-content: center; /* Выравнивает элементы вдоль. */
+    padding: 24px; /* Задаёт внутренний отступ. */
+    overflow: hidden; /* Управляет лишним содержимым. */
+    border-radius: 16px; /* Скругляет углы. */
+    background: #f3f7fe; /* Задаёт фон. */
+    font-style: italic; /* Задаёт начертание текста. */
+  }
+
+  /* БЭМ: блок «article-quote» — отдельный компонент. */
+  .article-quote::before {
+    position: absolute; /* Задаёт способ позиционирования. */
+    top: 15px; /* Задаёт положение сверху. */
+    left: 24px; /* Задаёт положение слева. */
+    color: #d9e5f5; /* Задаёт цвет текста. */
+    content: "“"; /* Добавляет декоративное содержимое. */
+    font-family: Georgia, serif; /* Задаёт семейство шрифта. */
+    font-size: 88px; /* Задаёт размер текста. */
+    line-height: 1; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «article-quote» — отдельный компонент. */
+  .article-quote p,
+  .article-quote cite {
+    position: relative; /* Задаёт способ позиционирования. */
+  }
+
+  /* БЭМ: блок «article-quote» — отдельный компонент. */
+  .article-quote cite {
+    font-style: normal; /* Задаёт начертание текста. */
+    font-weight: 700; /* Задаёт толщину текста. */
+  }
+
+  /* БЭМ: блок «article-figure» — отдельный компонент. */
+  .article-figure {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 16px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «article-figure» — отдельный компонент. */
+  .article-figure img {
+    height: 331px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: блок «article-figure» — отдельный компонент. */
+  .article-figure figcaption {
+    color: var(--color-muted); /* Задаёт цвет текста. */
+    font-size: 14px; /* Задаёт размер текста. */
+    font-weight: 400; /* Задаёт толщину текста. */
+    line-height: 18px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «article-thought» — отдельный компонент. */
+  .article-thought {
+    display: grid; /* Задаёт способ отображения. */
+    min-height: 168px; /* Задаёт минимальную высоту. */
+    padding: 24px 80px; /* Задаёт внутренний отступ. */
+    background: radial-gradient(ellipse at center, #fff6e6 0 37%, transparent 38%); /* Задаёт фон. */
+    font-style: italic; /* Задаёт начертание текста. */
+    text-align: center; /* Выравнивает текст. */
+    place-items: center; /* Выравнивает элементы Grid. */
+  }
+
+  /* БЭМ: блок «article-media-row» — отдельный компонент. */
+  .article-media-row {
+    display: grid; /* Задаёт способ отображения. */
+    grid-template-columns: 282px 1fr; /* Задаёт колонки Grid. */
+    gap: 24px; /* Задаёт расстояние между элементами. */
+    place-items: start stretch; /* Выравнивает элементы Grid. */
+  }
+
+  /* БЭМ: блок «article-media-row» — отдельный компонент. */
+  .article-media-row img {
+    width: 100%; /* Задаёт ширину. */
+    height: 380px; /* Задаёт высоту. */
+    object-fit: cover; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: модификатор «short» меняет «article-media-row». */
+  .article-media-row--short {
+    grid-template-columns: 281px 1fr; /* Задаёт колонки Grid. */
+  }
+
+  /* БЭМ: модификатор «short» меняет «article-media-row». */
+  .article-media-row--short img {
+    height: 174px; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: блок «exercise» — отдельный компонент. */
+  .exercise {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 8px; /* Задаёт расстояние между элементами. */
+    padding: 24px; /* Задаёт внутренний отступ. */
+    border-radius: 16px; /* Скругляет углы. */
+  }
+
+  /* БЭМ: модификатор «yellow» меняет «exercise». */
+  .exercise--yellow {
+    background: #fefaec; /* Задаёт фон. */
+  }
+
+  /* БЭМ: модификатор «peach» меняет «exercise». */
+  .exercise--peach {
+    background: #fff3eb; /* Задаёт фон. */
+  }
+
+  /* БЭМ: модификатор «mint» меняет «exercise». */
+  .exercise--mint {
+    background: rgba(3, 178, 165, 0.1); /* Задаёт фон. */
+  }
+
+  /* БЭМ: блок «article-gallery» — отдельный компонент. */
+  .article-gallery {
+    display: grid; /* Задаёт способ отображения. */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); /* Задаёт колонки Grid. */
+    gap: 24px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «article-gallery» — отдельный компонент. */
+  .article-gallery figure {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 24px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «article-gallery» — отдельный компонент. */
+  .article-gallery img {
+    width: 100%; /* Задаёт ширину. */
+    height: 235px; /* Задаёт высоту. */
+    object-fit: cover; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: элемент «separator» блока «article». */
+  .article__separator {
+    width: 178px; /* Задаёт ширину. */
+    height: 35px; /* Задаёт высоту. */
+    margin-inline: auto; /* Задаёт боковые отступы. */
+    object-fit: contain; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: блок «article-topics» — отдельный компонент. */
+  .article-topics {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: row wrap; /* Задаёт направление и перенос Flex. */
+    gap: 4px 8px; /* Задаёт расстояние между элементами. */
+    color: #2963a3; /* Задаёт цвет текста. */
+    font-size: 14px; /* Задаёт размер текста. */
+    font-weight: 400; /* Задаёт толщину текста. */
+  }
+
+  /* БЭМ: блок «article-topics» — отдельный компонент. */
+  .article-topics a:hover {
+    text-decoration: underline; /* Оформляет текст ссылки. */
+  }
+
+  /* БЭМ: блок «article-sidebar» — отдельный компонент. */
+  .article-sidebar {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    gap: 24px; /* Задаёт расстояние между элементами. */
+  }
+
+  /* БЭМ: блок «sidebar-card» — отдельный компонент. */
+  .sidebar-card {
+    display: flex; /* Задаёт способ отображения. */
+    flex-flow: column nowrap; /* Задаёт направление и перенос Flex. */
+    align-items: center; /* Выравнивает элементы поперёк. */
+    padding: 24px; /* Задаёт внутренний отступ. */
+    border: 1px solid #dedede; /* Задаёт границу. */
+    border-radius: 16px; /* Скругляет углы. */
+    box-shadow: 0 30px 50px rgba(239, 245, 251, 0.7); /* Добавляет тень. */
+    text-align: center; /* Выравнивает текст. */
+  }
+
+  /* БЭМ: блок «sidebar-card» — отдельный компонент. */
+  .sidebar-card h2,
+  .sidebar-card h3,
+  .sidebar-card p {
+    margin: 0; /* Задаёт внешний отступ. */
+  }
+
+  /* БЭМ: блок «sidebar-card» — отдельный компонент. */
+  .sidebar-card h2 {
+    margin-top: 16px; /* Задаёт отступ сверху. */
+    font-size: 18px; /* Задаёт размер текста. */
+    line-height: 24px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «sidebar-card» — отдельный компонент. */
+  .sidebar-card p,
+  .sidebar-card li {
+    font-size: 14px; /* Задаёт размер текста. */
+    line-height: 20px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «sidebar-card» — отдельный компонент. */
+  .sidebar-card .button {
+    width: 100%; /* Задаёт ширину. */
+    margin-top: 24px; /* Задаёт отступ сверху. */
+  }
+
+  /* БЭМ: модификатор «service» меняет «sidebar-card». */
+  .sidebar-card--service {
+    background: #e6f0fd; /* Задаёт фон. */
+  }
+
+  /* БЭМ: модификатор «service» меняет «sidebar-card». */
+  .sidebar-card--service > img {
+    width: 181px; /* Задаёт ширину. */
+    height: 145px; /* Задаёт высоту. */
+    object-fit: contain; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: модификатор «profile» меняет «sidebar-card». */
+  .sidebar-card--profile {
+    position: relative; /* Задаёт способ позиционирования. */
+    align-items: stretch; /* Выравнивает элементы поперёк. */
+    text-align: left; /* Выравнивает текст. */
+  }
+
+  /* БЭМ: элемент «badge» блока «sidebar-card». */
+  .sidebar-card__badge {
+    align-self: flex-start; /* Выравнивает отдельный элемент. */
+    padding: 3px 6px; /* Задаёт внутренний отступ. */
+    border-radius: 6px; /* Скругляет углы. */
+    margin-bottom: 8px; /* Задаёт отступ снизу. */
+    background: rgba(243, 244, 248, 0.7); /* Задаёт фон. */
+    font-size: 12px; /* Задаёт размер текста. */
+  }
+
+  /* БЭМ: элемент «avatar» блока «sidebar-card». */
+  .sidebar-card__avatar {
+    width: 120px; /* Задаёт ширину. */
+    height: 120px; /* Задаёт высоту. */
+    align-self: center; /* Выравнивает отдельный элемент. */
+    border-radius: 50%; /* Скругляет углы. */
+    object-fit: cover; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: модификатор «profile» меняет «sidebar-card». */
+  .sidebar-card--profile h2,
+  .sidebar-card--profile .sidebar-card__role,
+  .sidebar-card--profile > p:nth-of-type(2) {
+    text-align: center; /* Выравнивает текст. */
+  }
+
+  /* БЭМ: модификатор «profile» меняет «sidebar-card». */
+  .sidebar-card--profile hr {
+    width: 100%; /* Задаёт ширину. */
+    border: 0; /* Задаёт границу. */
+    border-top: 1px solid #dedede; /* Задаёт границу сверху. */
+    margin: 16px 0; /* Задаёт внешний отступ. */
+  }
+
+  /* БЭМ: модификатор «profile» меняет «sidebar-card». */
+  .sidebar-card--profile ul {
+    padding-left: 20px; /* Задаёт отступ внутри слева. */
+    margin: 8px 0 0; /* Задаёт внешний отступ. */
+  }
+
+  /* БЭМ: блок «sidebar-gift» — отдельный компонент. */
+  .sidebar-gift {
+    overflow: hidden; /* Управляет лишним содержимым. */
+    border-radius: 16px; /* Скругляет углы. */
+  }
+
+  /* БЭМ: блок «sidebar-gift» — отдельный компонент. */
+  .sidebar-gift picture {
+    display: block; /* Задаёт способ отображения. */
+  }
+
+  /* БЭМ: блок «sidebar-gift» — отдельный компонент. */
+  .sidebar-gift img {
+    width: 100%; /* Задаёт ширину. */
+    height: auto; /* Задаёт высоту. */
+  }
+
+  /* БЭМ: модификатор «price» меняет «sidebar-card». */
+  .sidebar-card--price {
+    position: relative; /* Задаёт способ позиционирования. */
+    min-height: 304px; /* Задаёт минимальную высоту. */
+    align-items: flex-start; /* Выравнивает элементы поперёк. */
+    overflow: hidden; /* Управляет лишним содержимым. */
+    border-radius: 24px; /* Скругляет углы. */
+    padding: 32px; /* Задаёт внутренний отступ. */
+    text-align: left; /* Выравнивает текст. */
+  }
+
+  /* БЭМ: модификатор «price» меняет «sidebar-card». */
+  .sidebar-card--price > :not(.sidebar-card__decoration) {
+    position: relative; /* Задаёт способ позиционирования. */
+    z-index: 1; /* Задаёт порядок слоёв. */
+  }
+
+  /* БЭМ: элемент «decoration» блока «sidebar-card». */
+  .sidebar-card__decoration {
+    position: absolute; /* Задаёт способ позиционирования. */
+    right: 0; /* Задаёт положение справа. */
+    bottom: 0; /* Задаёт положение снизу. */
+    width: 282px; /* Задаёт ширину. */
+    height: 304px; /* Задаёт высоту. */
+    pointer-events: none; /* Управляет нажатием мышью. */
+  }
+
+  /* БЭМ: модификатор «price» меняет «sidebar-card». */
+  .sidebar-card--price h2 {
+    margin-top: 0; /* Задаёт отступ сверху. */
+    color: #2963a3; /* Задаёт цвет текста. */
+  }
+
+  /* БЭМ: модификатор «price» меняет «sidebar-card». */
+  .sidebar-card--price h2 strong {
+    font-size: 24px; /* Задаёт размер текста. */
+  }
+
+  /* БЭМ: элемент «price» блока «sidebar-card». */
+  .sidebar-card__price {
+    margin-top: 16px; /* Задаёт отступ сверху. */
+    font-size: 24px; /* Задаёт размер текста. */
+    line-height: 32px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: модификатор «price» меняет «sidebar-card». */
+  .sidebar-card--price .button {
+    width: auto; /* Задаёт ширину. */
+  }
+
+  /* БЭМ: блок «article-cta» — отдельный компонент. */
+  .article-cta {
+    display: grid; /* Задаёт способ отображения. */
+    grid-template: auto / 1fr minmax(0, 520px); /* Задаёт структуру Grid. */
+    gap: 80px; /* Задаёт расстояние между элементами. */
+    place-items: center stretch; /* Выравнивает элементы Grid. */
+    padding: 72px 0 48px; /* Задаёт внутренний отступ. */
+    border-top: 1px solid #dedede; /* Задаёт границу сверху. */
+    margin-top: 48px; /* Задаёт отступ сверху. */
+  }
+
+  /* БЭМ: блок «article-cta» — отдельный компонент. */
+  .article-cta h2 {
+    margin: 0 0 24px; /* Задаёт внешний отступ. */
+    font-size: 48px; /* Задаёт размер текста. */
+    line-height: 56px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: блок «article-cta» — отдельный компонент. */
+  .article-cta p {
+    margin: 0 0 32px; /* Задаёт внешний отступ. */
+    font-size: 18px; /* Задаёт размер текста. */
+    line-height: 26px; /* Задаёт высоту строки. */
+  }
+
+  /* БЭМ: элемент «image» блока «article-cta». */
+  .article-cta__image {
+    width: 520px; /* Задаёт ширину. */
+    height: 330px; /* Задаёт высоту. */
+    object-fit: contain; /* Вписывает изображение в область. */
+  }
+
+  /* БЭМ: элемент «side-decoration» блока «article-page». */
+  .article-page__side-decoration {
+    position: absolute; /* Задаёт способ позиционирования. */
+    right: -199px; /* Задаёт положение справа. */
+    bottom: 110px; /* Задаёт положение снизу. */
+    width: 272px; /* Задаёт ширину. */
+    height: 240px; /* Задаёт высоту. */
+    pointer-events: none; /* Управляет нажатием мышью. */
+  }
+
+  /* БЭМ: элемент «side-circle» блока «article-page». */
+  .article-page__side-circle {
+    position: absolute; /* Задаёт способ позиционирования. */
+    top: 2404px; /* Задаёт положение сверху. */
+    right: 0; /* Задаёт положение справа. */
+    width: 218px; /* Задаёт ширину. */
+    height: 606px; /* Задаёт высоту. */
+    pointer-events: none; /* Управляет нажатием мышью. */
+  }
+
+/* TODO: Проверка всех экранов после изменения ширины. */
+  @media (max-width: 1199px) {
+    /* БЭМ: блок «article-layout» — отдельный компонент. */
+    .article-layout {
+      grid-template-columns: minmax(0, 714px) 222px; /* Задаёт колонки Grid. */
+      gap: 24px; /* Задаёт расстояние между элементами. */
+      padding-top: 40px; /* Задаёт отступ внутри сверху. */
+    }
+
+    /* БЭМ: элемент «title» блока «article». */
+    .article__title {
+      font-size: 40px; /* Задаёт размер текста. */
+      line-height: 48px; /* Задаёт высоту строки. */
+    }
+
+    /* БЭМ: блок «article-sidebar» — отдельный компонент. */
+    .article-sidebar .sidebar-card,
+    .article-sidebar .sidebar-gift {
+      padding-right: 16px; /* Задаёт отступ внутри справа. */
+      padding-left: 16px; /* Задаёт отступ внутри слева. */
+    }
+
+    /* БЭМ: блок «article-sidebar» — отдельный компонент. */
+    .article-sidebar .sidebar-gift {
+      padding: 0; /* Задаёт внутренний отступ. */
+    }
+
+    /* БЭМ: блок «article-sidebar» — отдельный компонент. */
+    .article-sidebar .sidebar-card--price {
+      padding: 24px; /* Задаёт внутренний отступ. */
+    }
+
+    /* БЭМ: элемент «side-circle» блока «article-page». */
+    .article-page__side-circle,
+    .article-cta {
+      display: none; /* Задаёт способ отображения. */
+    }
+  }
+
+  @media (max-width: 899px) {
+    /* БЭМ: блок «article-layout» — отдельный компонент. */
+    .article-layout {
+      display: block; /* Задаёт способ отображения. */
+      padding-top: 32px; /* Задаёт отступ внутри сверху. */
+    }
+
+    /* БЭМ: блок «article» — отдельный компонент. */
+    .article {
+      width: 100%; /* Задаёт ширину. */
+    }
+
+    /* БЭМ: элемент «title» блока «article». */
+    .article__title {
+      max-width: 714px; /* Задаёт максимальную ширину. */
+    }
+
+    /* БЭМ: блок «article-sidebar» — отдельный компонент. */
+    .article-sidebar {
+      display: grid; /* Задаёт способ отображения. */
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); /* Задаёт колонки Grid. */
+      gap: 16px; /* Задаёт расстояние между элементами. */
+      margin-top: 24px; /* Задаёт отступ сверху. */
+    }
+
+    /* БЭМ: блок «article-toc» — отдельный компонент. */
+    .article-toc {
+      max-width: 100%; /* Задаёт максимальную ширину. */
+    }
+
+    /* БЭМ: блок «article-page» — отдельный компонент. */
+    .article-page {
+      padding-bottom: 59px; /* Задаёт отступ внутри снизу. */
+    }
+
+    /* БЭМ: элемент «side-decoration» блока «article-page». */
+    .article-page__side-decoration {
+      display: none; /* Задаёт способ отображения. */
+    }
+  }
+
+  @media (max-width: 600px) {
+    /* БЭМ: элемент «title-break» блока «article». */
+    .article__title-break {
+      display: none; /* Задаёт способ отображения. */
+    }
+
+    /* БЭМ: элемент «breadcrumbs» блока «article-page». */
+    .article-page__breadcrumbs {
+      padding-top: 16px; /* Задаёт отступ внутри сверху. */
+    }
+
+    /* БЭМ: блок «article-layout» — отдельный компонент. */
+    .article-layout {
+      padding-top: 32px; /* Задаёт отступ внутри сверху. */
+    }
+
+    /* БЭМ: блок «article» — отдельный компонент. */
+    .article {
+      gap: 16px; /* Задаёт расстояние между элементами. */
+    }
+
+    /* БЭМ: элемент «title» блока «article». */
+    .article__title {
+      font-size: 32px; /* Задаёт размер текста. */
+      line-height: 40px; /* Задаёт высоту строки. */
+      letter-spacing: 0; /* Задаёт расстояние между буквами. */
+    }
+
+    /* БЭМ: элемент «meta» блока «article». */
+    .article__meta {
+      margin-bottom: 16px; /* Задаёт отступ снизу. */
+    }
+
+    /* БЭМ: элемент «hero» блока «article». */
+    .article__hero,
+    .article-figure img {
+      height: auto; /* Задаёт высоту. */
+      aspect-ratio: 16 / 9; /* Задаёт пропорции элемента. */
+    }
+
+    /* БЭМ: элемент «nested» блока «article-toc». */
+    .article-toc__nested,
+    .article-toc__nested--2,
+    .article-toc__nested--3 {
+      margin-left: 0; /* Задаёт отступ слева. */
+    }
+
+    /* БЭМ: элемент «section» блока «article». */
+    .article__section h2,
+    .exercise h2 {
+      font-size: 24px; /* Задаёт размер текста. */
+      line-height: 32px; /* Задаёт высоту строки. */
+    }
+
+    /* БЭМ: блок «article-quote» — отдельный компонент. */
+    .article-quote,
+    .exercise {
+      padding: 16px; /* Задаёт внутренний отступ. */
+    }
+
+    /* БЭМ: блок «article-thought» — отдельный компонент. */
+    .article-thought {
+      min-height: 176px; /* Задаёт минимальную высоту. */
+      padding: 24px 16px; /* Задаёт внутренний отступ. */
+    }
+
+    /* БЭМ: блок «article-media-row» — отдельный компонент. */
+    .article-media-row,
+    .article-media-row--short {
+      grid-template-columns: 1fr; /* Задаёт колонки Grid. */
+      gap: 16px; /* Задаёт расстояние между элементами. */
+    }
+
+    /* БЭМ: блок «article-media-row» — отдельный компонент. */
+    .article-media-row img,
+    .article-media-row--short img {
+      width: 100%; /* Задаёт ширину. */
+      height: auto; /* Задаёт высоту. */
+      max-height: 420px; /* Задаёт максимальную высоту. */
+    }
+
+    /* БЭМ: блок «article-gallery» — отдельный компонент. */
+    .article-gallery figure {
+      gap: 16px; /* Задаёт расстояние между элементами. */
+    }
+
+    /* БЭМ: блок «article-gallery» — отдельный компонент. */
+    .article-gallery img {
+      height: auto; /* Задаёт высоту. */
+      aspect-ratio: 16 / 11; /* Задаёт пропорции элемента. */
+    }
+
+    /* БЭМ: блок «article-topics» — отдельный компонент. */
+    .article-topics {
+      display: none; /* Задаёт способ отображения. */
+    }
+
+  }
+
+  @media (max-width: 359px) {
+    /* БЭМ: блок «article-layout» — отдельный компонент. */
+    .article-layout {
+      padding-top: 24px; /* Задаёт отступ внутри сверху. */
+    }
+
+    /* БЭМ: элемент «title» блока «article». */
+    .article__title {
+      font-size: 24px; /* Задаёт размер текста. */
+      line-height: 32px; /* Задаёт высоту строки. */
+    }
+
+    /* БЭМ: блок «article» — отдельный компонент. */
+    .article {
+      font-size: 16px; /* Задаёт размер текста. */
+      line-height: 24px; /* Задаёт высоту строки. */
+    }
+  }
+
+/* TODO: Работа основных стилей без этой функции. */
+  @supports (text-wrap: balance) {
+    /* БЭМ: элемент «title» блока «article». */
+    .article__title,
+    .article-cta h2 {
+      text-wrap: balance; /* Улучшает перенос строк. */
+    }
+  }
+
+/* TODO: Сохранение защиты от лишней анимации. */
+  @media (prefers-reduced-motion: reduce) {
+    /* БЭМ: блок «article-page» — отдельный компонент. */
+    .article-page * {
+      scroll-behavior: auto; /* Настраивает плавную прокрутку. */
+    }
+  }
+}
