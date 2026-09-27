@@ -1,51 +1,57 @@
-/* Шрифты проекта. БЭМ здесь не нужен. */
+/* Подключает локальные Montserrat и Open Sans; основной шрифт выбирается в common.css. */
+/* Каждый @font-face связывает отдельный файл с семейством, толщиной и начертанием. */
 @layer fonts {
-/* TODO: Обновление путей src при переносе шрифтов. */
-@font-face {
-  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/Montserrat-Regular.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 400; /* Задаёт толщину текста. */
-  font-style: normal; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Пути src отсчитываются от этого CSS-файла: ../ ведёт в корень проекта. */
+  @font-face {
+    font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/Montserrat-Regular.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 400; /* Использует обычное начертание. */
+    font-style: normal; /* Использует прямое начертание без курсива. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 
-@font-face {
-  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/Montserrat-Italic.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 400; /* Задаёт толщину текста. */
-  font-style: italic; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Регистрирует загружаемый шрифт; font-family связывает его с правилами текста. */
+  @font-face {
+    font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/Montserrat-Italic.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 400; /* Использует обычное начертание. */
+    font-style: italic; /* Использует курсив. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 
-@font-face {
-  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/Montserrat-Medium.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 500; /* Задаёт толщину текста. */
-  font-style: normal; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Регистрирует загружаемый шрифт; font-family связывает его с правилами текста. */
+  @font-face {
+    font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/Montserrat-Medium.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 500; /* Использует среднюю толщину букв. */
+    font-style: normal; /* Использует прямое начертание без курсива. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 
-@font-face {
-  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 600; /* Задаёт толщину текста. */
-  font-style: normal; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Регистрирует загружаемый шрифт; font-family связывает его с правилами текста. */
+  @font-face {
+    font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 600; /* Использует полужирное начертание. */
+    font-style: normal; /* Использует прямое начертание без курсива. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 
-@font-face {
-  font-family: "Montserrat"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 700; /* Задаёт толщину текста. */
-  font-style: normal; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Регистрирует загружаемый шрифт; font-family связывает его с правилами текста. */
+  @font-face {
+    font-family: "Montserrat"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 700; /* Использует жирное начертание. */
+    font-style: normal; /* Использует прямое начертание без курсива. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 
-@font-face {
-  font-family: "Open Sans"; /* Задаёт семейство шрифта. */
-  src: url("../assets/fonts/OpenSans-Regular.woff2") format("woff2"); /* Указывает файл шрифта. */
-  font-weight: 400; /* Задаёт толщину текста. */
-  font-style: normal; /* Задаёт начертание текста. */
-  font-display: swap; /* Показывает текст при загрузке. */
-}
+  /* Регистрирует загружаемый шрифт; font-family связывает его с правилами текста. */
+  @font-face {
+    font-family: "Open Sans"; /* Задаёт семейство шрифта. */
+    src: url("../assets/fonts/OpenSans-Regular.woff2") format("woff2"); /* Загружает локальный WOFF2-файл по пути относительно fonts.css. */
+    font-weight: 400; /* Использует обычное начертание. */
+    font-style: normal; /* Использует прямое начертание без курсива. */
+    font-display: swap; /* Сначала показывает текст запасным шрифтом, затем заменяет его загруженным. */
+  }
 }
