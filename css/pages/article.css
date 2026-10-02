@@ -1,4 +1,4 @@
-/* Стили posts/how-to-manage-anxiety/index.html: текст статьи, иллюстрации и боковая панель. */
+/* Стили posts/article-layout/article-layout.html: текст статьи, иллюстрации и боковая панель. */
 /* Используют шрифты из fonts.css и общие переменные и компоненты из common.css. */
 @layer pages {
   /* БЭМ: блок «article-page» — отдельный компонент. */

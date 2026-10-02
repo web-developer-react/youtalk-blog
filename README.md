@@ -130,34 +130,34 @@ HTML-разметка имеет правильную вложенность и 
 - `assets/fonts/Montserrat-Bold.woff2` — Файл шрифта для оформления текста. Упоминается в `css/fonts.css`.
 - `assets/fonts/OpenSans-Regular.woff2` — Файл шрифта для оформления текста. Упоминается в `css/fonts.css`.
 - `assets/fonts/Montserrat-Regular.woff2` — Файл шрифта для оформления текста. Упоминается в `css/fonts.css`.
-- `assets/images/article/price-card-gifts.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-hero.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-hands.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-sunset.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/cta-people.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/sidebar-people.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-anger.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-people.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/gift-banner-tablet-wide.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/gift-banner-desktop.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/gift-banner-tablet-narrow.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/cta-side-decoration.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/gift-banner-mobile.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/psychologist.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-side-circle.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/gift-banner-phone-wide.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-separator.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
-- `assets/images/article/article-woman.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`.
+- `assets/images/article/price-card-gifts.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-hero.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-hands.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-sunset.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/cta-people.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/sidebar-people.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-anger.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-people.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/gift-banner-tablet-wide.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/gift-banner-desktop.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/gift-banner-tablet-narrow.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/cta-side-decoration.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/gift-banner-mobile.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/psychologist.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-side-circle.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/gift-banner-phone-wide.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-separator.png` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
+- `assets/images/article/article-woman.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`.
 - `assets/images/icons/smile.png` — Графический ресурс страницы или учебного материала. Упоминается в `index.html`.
-- `assets/images/icons/logo.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/sk.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/twitter.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/dzen.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/send.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/telegram.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
+- `assets/images/icons/logo.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/sk.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/twitter.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/dzen.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/send.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/telegram.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
 - `assets/images/icons/breadcrumb-arrow.svg` — Графический ресурс страницы или учебного материала. Прямое подключение по имени в исходниках этой папки не найдено; файл сохранён.
-- `assets/images/icons/vk.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
-- `assets/images/icons/member.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/how-to-manage-anxiety/index.html`, `index.html`.
+- `assets/images/icons/vk.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
+- `assets/images/icons/member.svg` — Графический ресурс страницы или учебного материала. Упоминается в `posts/article-layout/article-layout.html`, `index.html`.
 - `assets/images/icons/unicorn.png` — Графический ресурс страницы или учебного материала. Упоминается в `index.html`.
 - `assets/images/blog/blog-work-online.jpeg` — Графический ресурс страницы или учебного материала. Упоминается в `index.html`.
 - `assets/images/blog/blog-anxiety.png` — Графический ресурс страницы или учебного материала. Упоминается в `index.html`.
@@ -174,7 +174,7 @@ HTML-разметка имеет правильную вложенность и 
 - `css/pages/article.css` — CSS-оформление: селекторы связывают правила с разметкой, свойства задают вид и расположение.
 - `css/fonts.css` — CSS-оформление: селекторы связывают правила с разметкой, свойства задают вид и расположение.
 - `css/common.css` — CSS-оформление: селекторы связывают правила с разметкой, свойства задают вид и расположение.
-- `posts/how-to-manage-anxiety/index.html` — HTML-страница «Как не утонуть в тревоге — YouTalk». Разметка, подключения и встроенные примеры пояснены рядом с кодом.
+- `posts/article-layout/article-layout.html` — HTML-страница «Как не утонуть в тревоге — YouTalk». Разметка, подключения и встроенные примеры пояснены рядом с кодом.
 - `index.html` — HTML-страница «Блог — YouTalk». Разметка, подключения и встроенные примеры пояснены рядом с кодом.
 
 ## 🎯 Псевдоклассы CSS — уточнение мест
